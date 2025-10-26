@@ -140,6 +140,12 @@
     </main>
     
     <Footer />
+    
+    <!-- PDF Viewer Modal -->
+    <PDFViewer 
+      :isOpen="showPDFViewer" 
+      @close="closePDFViewer"
+    />
   </div>
 </template>
 
@@ -147,15 +153,18 @@
 import { ref, onMounted } from 'vue'
 import NavBar from './NavBar.vue'
 import Footer from './Footer.vue'
+import PDFViewer from './PDFViewer.vue'
 
 export default {
   name: 'AboutPage',
   components: {
     NavBar,
-    Footer
+    Footer,
+    PDFViewer
   },
   setup() {
     const showContent = ref(false)
+    const showPDFViewer = ref(false)
     const experiences = ref([
       {
         title: 'Automation Specialist',
@@ -207,8 +216,12 @@ export default {
     ])
 
     const openCV = () => {
-      // Open Ricardo's CV from the src/CV folder
-      window.open('/src/CV/Ricardo Moses Resume.pdf', '_blank')
+      // Open PDF viewer modal
+      showPDFViewer.value = true
+    }
+
+    const closePDFViewer = () => {
+      showPDFViewer.value = false
     }
 
     onMounted(() => {
@@ -220,9 +233,11 @@ export default {
 
     return {
       showContent,
+      showPDFViewer,
       experiences,
       funFacts,
-      openCV
+      openCV,
+      closePDFViewer
     }
   }
 }

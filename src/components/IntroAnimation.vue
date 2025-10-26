@@ -31,11 +31,13 @@
 
 <script>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { preventBodyScroll, restoreBodyScroll, forceRestoreBodyScroll } from '../utils/scrollPrevention.js'
 
 export default {
   name: 'IntroAnimation',
   setup() {
+    const route = useRoute()
     const showIntro = ref(false)
     const showHi = ref(false)
     const showWelcome = ref(false)
@@ -51,14 +53,17 @@ export default {
     })
 
     onMounted(() => {
+      // Only show intro on home page
+      const isHomePage = route.path === '/'
+      
       // Check if intro has been shown in this session
       const hasShownIntro = sessionStorage.getItem('introShown')
       
-      console.log('IntroAnimation mounted:', { hasShownIntro })
+      console.log('IntroAnimation mounted:', { hasHomePage: isHomePage, hasShownIntro })
       
-      // Show intro if not shown before in this session
-      if (!hasShownIntro) {
-        console.log('Showing intro animation')
+      // Show intro only if on home page and not shown before in this session
+      if (isHomePage && !hasShownIntro) {
+        console.log('Showing intro animation on home page')
         showIntro.value = true
         sessionStorage.setItem('introShown', 'true')
         
@@ -85,7 +90,7 @@ export default {
           showIntro.value = false
         }, 4500)
       } else {
-        console.log('Intro already shown in this session')
+        console.log('Intro not shown - either not home page or already shown in this session')
       }
     })
 
