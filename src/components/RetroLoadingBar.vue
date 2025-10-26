@@ -17,13 +17,13 @@
       <div class="relative z-10 retro-screen-content h-full rounded-lg flex flex-col items-center justify-center p-8">
         <!-- Loading Text -->
         <div class="mb-8">
-          <h1 class="font-pixelify font-bold text-4xl md:text-6xl tracking-wider retro-loading-text">
+          <h1 class="font-pixelify font-bold text-3xl sm:text-4xl md:text-6xl tracking-wider retro-loading-text">
             LOADING
           </h1>
         </div>
         
         <!-- Retro Loading Bar Container -->
-        <div class="w-full max-w-md">
+        <div class="w-full max-w-sm sm:max-w-md px-4">
           <!-- Loading Bar Frame -->
           <div class="relative retro-loading-frame p-2">
             <!-- Loading Bar Background -->
@@ -41,15 +41,15 @@
           
           <!-- Loading Percentage -->
           <div class="text-center mt-4">
-            <span class="font-pixelify text-2xl retro-loading-text">
+            <span class="font-pixelify text-xl sm:text-2xl retro-loading-text">
               {{ Math.round(loadingProgress) }}%
             </span>
           </div>
         </div>
         
         <!-- Retro Computer Text -->
-        <div class="mt-8 text-center">
-          <p class="font-pixelify text-lg retro-loading-subtext">
+        <div class="mt-8 text-center px-4">
+          <p class="font-pixelify text-base sm:text-lg retro-loading-subtext">
             Initializing system...
           </p>
         </div>

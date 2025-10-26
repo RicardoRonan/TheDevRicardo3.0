@@ -9,12 +9,12 @@
       <!-- Simple Retro Loading Screen -->
       <div class="text-center p-8">
         <!-- Loading Text -->
-        <h1 class="font-pixelify font-bold text-4xl md:text-6xl mb-8 tracking-wider retro-loading-text">
+        <h1 class="font-pixelify font-bold text-3xl sm:text-4xl md:text-6xl mb-8 tracking-wider retro-loading-text">
           LOADING
         </h1>
         
         <!-- Retro Loading Bar -->
-        <div class="w-80 mx-auto">
+        <div class="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto px-4">
           <!-- Loading Bar Frame -->
           <div class="retro-loading-frame p-2">
             <!-- Loading Bar Background -->
@@ -32,8 +32,8 @@
         </div>
         
         <!-- Loading Message -->
-        <div class="mt-6">
-          <p class="font-pixelify text-lg retro-loading-subtext">
+        <div class="mt-6 px-4">
+          <p class="font-pixelify text-base sm:text-lg retro-loading-subtext">
             {{ loadingMessage }}
           </p>
         </div>
@@ -160,7 +160,8 @@ export default {
     0 25px 50px -12px rgba(0, 0, 0, 0.25),
     0 0 0 1px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  width: 90%;
+  width: 95%;
+  margin: 1rem;
   animation: popupSlideIn 0.3s ease-out;
   transition: all 0.3s ease;
 }
