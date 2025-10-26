@@ -8,7 +8,8 @@
     >
       <!-- Modal Content -->
       <div 
-        class="bg-theme-light border-2 border-theme rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden"
+        class="bg-theme-light border-2 border-theme rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden transition-all duration-300"
+        :class="{ 'fixed inset-4 max-w-none max-h-none rounded-none': isFullscreen }"
         @click.stop
       >
         <!-- Header -->
@@ -17,6 +18,14 @@
             Ricardo Moses - Resume
           </h3>
           <div class="flex items-center gap-2">
+            <!-- Full Screen Button -->
+            <button 
+              @click="toggleFullscreen"
+              class="px-3 py-1 bg-theme text-theme-light font-pixelify text-sm rounded-lg hover:bg-opacity-80 transition-all duration-300"
+              title="Toggle Full Screen"
+            >
+              {{ isFullscreen ? 'Exit Full' : 'Full Screen' }}
+            </button>
             <!-- Download Button -->
             <button 
               @click="downloadPDF"
@@ -37,7 +46,7 @@
         </div>
 
         <!-- PDF Content -->
-        <div class="p-4 overflow-auto max-h-[calc(90vh-80px)]">
+        <div class="p-4 overflow-auto max-h-[calc(90vh-80px)]" :class="{ 'max-h-[calc(100vh-80px)]': isFullscreen }">
           <div v-if="loading" class="flex items-center justify-center py-12">
             <div class="text-center">
               <div class="retro-loading mb-4"></div>
@@ -60,10 +69,13 @@
             <iframe
               :src="pdfSource"
               class="pdf-iframe"
+              :style="{ transform: `scale(${zoomLevel})`, transformOrigin: 'top left' }"
               @load="onPdfLoaded"
               @error="onPdfError"
               title="Ricardo Moses Resume"
             ></iframe>
+            
+
           </div>
         </div>
       </div>
@@ -72,7 +84,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { ref, watch, onUnmounted } from 'vue'
 
 export default {
   name: 'PDFViewer',
@@ -91,6 +103,8 @@ export default {
     const loading = ref(true)
     const error = ref(false)
     const pdfSource = ref(props.pdfUrl)
+    const isFullscreen = ref(false)
+    const zoomLevel = ref(1)
 
     const closeViewer = () => {
       emit('close')
@@ -106,6 +120,15 @@ export default {
       document.body.removeChild(link)
     }
 
+    const toggleFullscreen = () => {
+      isFullscreen.value = !isFullscreen.value
+    }
+
+
+    const resetZoom = () => {
+      zoomLevel.value = 1
+    }
+
     const onPdfLoaded = () => {
       loading.value = false
       error.value = false
@@ -116,24 +139,63 @@ export default {
       error.value = true
     }
 
+    // Keyboard shortcuts
+    const handleKeydown = (event) => {
+      if (!props.isOpen) return
+      
+      switch (event.key) {
+        case 'Escape':
+          if (isFullscreen.value) {
+            isFullscreen.value = false
+          } else {
+            closeViewer()
+          }
+          break
+        case 'F11':
+          event.preventDefault()
+          toggleFullscreen()
+          break
+        case '0':
+          event.preventDefault()
+          resetZoom()
+          break
+      }
+    }
+
     // Reset state when modal opens
     watch(() => props.isOpen, (newValue) => {
       if (newValue) {
         loading.value = true
         error.value = false
+        isFullscreen.value = false
+        zoomLevel.value = 1
+        // Add keyboard event listener
+        document.addEventListener('keydown', handleKeydown)
         // Add a small delay to show loading state
         setTimeout(() => {
           loading.value = false
         }, 1000)
+      } else {
+        // Remove keyboard event listener
+        document.removeEventListener('keydown', handleKeydown)
       }
+    })
+
+    // Cleanup on unmount
+    onUnmounted(() => {
+      document.removeEventListener('keydown', handleKeydown)
     })
 
     return {
       loading,
       error,
       pdfSource,
+      isFullscreen,
+      zoomLevel,
       closeViewer,
       downloadPDF,
+      toggleFullscreen,
+      resetZoom,
       onPdfLoaded,
       onPdfError
     }
@@ -159,6 +221,22 @@ export default {
   border: 2px solid var(--theme-color, #333);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.pdf-content {
+  overflow: auto;
+  max-height: calc(90vh - 120px);
+}
+
+/* Fullscreen mode adjustments */
+.fixed.inset-4 .pdf-content {
+  max-height: calc(100vh - 120px);
+}
+
+.fixed.inset-4 .pdf-iframe {
+  height: calc(100vh - 200px);
+  min-height: 600px;
 }
 
 .retro-loading {

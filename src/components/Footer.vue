@@ -17,9 +17,9 @@
               </router-link>
             </li>
             <li>
-              <a href="/src/CV/Ricardo Moses Resume.pdf" target="_blank" rel="noopener noreferrer" class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify">
-                Download CV
-              </a>
+              <button @click="openCV" class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify cursor-pointer">
+                View CV
+              </button>
             </li>
           </ul>
         </div>
@@ -71,11 +71,40 @@
         </p>
       </div>
     </div>
+    
+    <!-- PDF Viewer Modal -->
+    <PDFViewer 
+      :isOpen="showPDFViewer" 
+      @close="closePDFViewer"
+    />
   </footer>
 </template>
 
 <script>
+import { ref } from 'vue'
+import PDFViewer from './PDFViewer.vue'
+
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  components: {
+    PDFViewer
+  },
+  setup() {
+    const showPDFViewer = ref(false)
+
+    const openCV = () => {
+      showPDFViewer.value = true
+    }
+
+    const closePDFViewer = () => {
+      showPDFViewer.value = false
+    }
+
+    return {
+      showPDFViewer,
+      openCV,
+      closePDFViewer
+    }
+  }
 }
 </script>

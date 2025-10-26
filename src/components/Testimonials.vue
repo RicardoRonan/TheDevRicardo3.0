@@ -24,11 +24,11 @@
           </div>
           
           <!-- Testimonials Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div 
               v-for="(testimonial, index) in testimonials" 
               :key="testimonial.id"
-              class=" rounded-2xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-theme-light"
+              class="rounded-2xl p-4 sm:p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-theme-light"
               :style="{ 'animation-delay': `${index * 100}ms` }"
             >
               <!-- Quote Icon -->
@@ -39,7 +39,7 @@
               </div>
               
               <!-- Testimonial Text -->
-              <blockquote class="text-theme font-pixelify text-base mb-6 leading-relaxed">
+              <blockquote class="text-theme font-pixelify text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                 "{{ testimonial.testimonial }}"
               </blockquote>
               
@@ -62,11 +62,11 @@
                     {{ testimonial.name.charAt(0) }}
                   </div>
                 </div>
-                <div class="ml-4">
-                  <div class="font-pixelify font-semibold text-theme">
+                <div class="ml-3 sm:ml-4">
+                  <div class="font-pixelify font-semibold text-theme text-sm sm:text-base">
                     {{ testimonial.name }}
                   </div>
-                  <div class="font-pixelify text-sm text-accent-red">
+                  <div class="font-pixelify text-xs sm:text-sm text-accent-red">
                     {{ testimonial.role }}
                   </div>
                 </div>
@@ -75,20 +75,20 @@
           </div>
           
           <!-- Call to Action -->
-          <div class="text-center mt-16">
-            <div class="bg-theme-light border border-theme rounded-2xl p-8 max-w-4xl mx-auto">
-              <h2 class="font-pixelify font-bold text-2xl md:text-3xl text-theme mb-4">
+          <div class="text-center mt-12 md:mt-16 px-4 sm:px-0">
+            <div class="bg-theme-light border  rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
+              <h2 class="font-pixelify font-bold text-xl sm:text-2xl md:text-3xl text-theme mb-4 md:mb-6">
                 Ready to work together?
               </h2>
-              <p class="font-pixelify text-lg text-theme mb-6">
+              <p class="font-pixelify text-base sm:text-lg text-theme mb-6 md:mb-8 leading-relaxed">
                 Let's discuss your project and see how I can help bring your vision to life.
               </p>
               <router-link 
                 to="/contact"
-                class="inline-flex items-center px-8 py-3 bg-accent-red text-white font-pixelify font-semibold rounded-lg hover:bg-accent-red/80 transition-colors duration-200"
+                class="inline-flex items-center px-6 sm:px-8 py-3 bg-accent-red text-white font-pixelify font-semibold rounded-lg hover:bg-accent-red/80 transition-colors duration-200 text-sm sm:text-base"
               >
                 Get In Touch
-                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </router-link>
