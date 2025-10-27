@@ -18,9 +18,14 @@
             <h1 class="font-pixelify font-bold text-4xl md:text-5xl text-theme mb-4">
               Testimonials
             </h1>
-            <p class="font-pixelify text-lg text-theme max-w-2xl mx-auto">
+            <p class="font-pixelify text-lg text-theme max-w-2xl mx-auto mb-4">
               What clients and colleagues say about my work
             </p>
+            <div class="bg-theme-light border border-theme rounded-lg p-3 max-w-md mx-auto">
+              <p class="font-pixelify text-sm text-theme">
+                💡 <span class="font-semibold">Tip:</span> Click on any testimonial image to see the real photo!
+              </p>
+            </div>
           </div>
           
           <!-- Testimonials Grid -->
@@ -49,15 +54,19 @@
                   <img 
                     :src="testimonial.pixelImg" 
                     :alt="testimonial.name"
-                    class="w-12 h-12 rounded-full object-cover border-2 border-theme"
+                    class="w-12 h-12 rounded-full object-cover border-2 border-theme cursor-pointer hover:border-accent-red transition-colors duration-200 hover:scale-105 transform"
                     @error="handleImageError($event, testimonial)"
                     @load="handleImageLoad($event, testimonial)"
+                    @click="openModal(testimonial)"
                     loading="lazy"
+                    title="Click to see real photo"
                   >
                   <!-- Fallback placeholder if both images fail -->
                   <div 
                     v-if="!testimonial.imageLoaded" 
-                    class="w-12 h-12 rounded-full border-2 border-theme bg-theme-light flex items-center justify-center text-theme font-pixelify text-xs"
+                    class="w-12 h-12 rounded-full border-2 border-theme bg-theme-light flex items-center justify-center text-theme font-pixelify text-xs cursor-pointer hover:border-accent-red transition-colors duration-200 hover:scale-105 transform"
+                    @click="openModal(testimonial)"
+                    title="Click to see real photo"
                   >
                     {{ testimonial.name.charAt(0) }}
                   </div>
@@ -106,25 +115,36 @@
       :duration="1200"
       :loading-message="'Loading testimonials...'"
     />
+    
+    <!-- Testimonial Modal -->
+    <TestimonialModal 
+      :is-open="isModalOpen"
+      :testimonial="selectedTestimonial"
+      @close="closeModal"
+    />
   </div>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue'
-import NavBar from './NavBar.vue'
-import Footer from './Footer.vue'
-import SimpleRetroLoading from './SimpleRetroLoading.vue'
+import NavBar from '../components/layout/NavBar.vue'
+import Footer from '../components/layout/Footer.vue'
+import SimpleRetroLoading from '../components/ui/SimpleRetroLoading.vue'
+import TestimonialModal from '../components/ui/TestimonialModal.vue'
 
 export default {
   name: 'Testimonials',
   components: {
     NavBar,
     Footer,
-    SimpleRetroLoading
+    SimpleRetroLoading,
+    TestimonialModal
   },
   setup() {
     const showContent = ref(false)
     const showImageLoading = ref(false)
+    const isModalOpen = ref(false)
+    const selectedTestimonial = ref(null)
     
     const testimonials = ref([
       {
@@ -134,17 +154,7 @@ export default {
         img: "https://i.postimg.cc/CMG5NXwh/Fatima-1-1.jpg",
         testimonial:
           " Ricardo is a hard-working, talented and authentic individual who always goes above and beyond to achieve the best results possible. His good vibes and positivity is contagious.",
-        role: "Colleague",
-        imageLoaded: false,
-      },
-      {
-        id: 2,
-        name: "Ashton Abrahams",
-        pixelImg: "https://i.postimg.cc/T1gtLGbW/1658339507305-1.png",
-        img: "https://i.postimg.cc/yd8rWw6V/Ashton-4.jpg",
-        testimonial:
-          "Ricardo is a dedicated individual who never stops improving, he is a team player and a valuable asset to any team",
-        role: "Colleague",
+        role: "Former Colleague | Junior CAM Developer at Clickatell",
         imageLoaded: false,
       },
       {
@@ -164,7 +174,7 @@ export default {
         img: "https://i.postimg.cc/q7SjMgFG/Carla.png",
         testimonial:
           " It has been a pleasure to have Ricardo Ronan Moses as my colleague. He is an outstanding web developer.His professionalism and effort can be seen in all projects he has worked on.I would highly recommend Ricardo as an addition to any team or company.",
-        role: "Colleague",
+        role: "Former Colleague | Software Developer",
         imageLoaded: false,
       },
       {
@@ -174,7 +184,7 @@ export default {
         img: "https://i.postimg.cc/5NbpthsD/Jason.jpg",
         testimonial:
           "Out of all the people I have engaged with, Ricardo is one of the most creative I have come across. He is very skilled in creating visual pieces, which will definitely push him to be a great frontend developer. ",
-        role: "Lecturer",
+        role: "FormerLecturer",
         imageLoaded: false,
       },
       {
@@ -204,7 +214,7 @@ export default {
         img: "https://i.postimg.cc/nh4XLLLt/IMG-20220720-211835.jpg",
         testimonial:
           "Ricardo is a person that improves the environment around him with his positivity and pure presence. His ability in both styling his application and the functionality is astronomically good and in my opinion, is one of the best when comes to mobile responsiveness. With all of this in mind, I truly believe he is an excellent candidate for a software development role.",
-        role: "Colleague",
+        role: "Former Colleague | Consultant at MRI",
         imageLoaded: false,
       },
     ])
@@ -226,6 +236,16 @@ export default {
       testimonial.imageLoaded = true
     }
 
+    const openModal = (testimonial) => {
+      selectedTestimonial.value = testimonial
+      isModalOpen.value = true
+    }
+
+    const closeModal = () => {
+      isModalOpen.value = false
+      selectedTestimonial.value = null
+    }
+
     onMounted(() => {
       // Show loading for images
       showImageLoading.value = true
@@ -245,7 +265,11 @@ export default {
       showImageLoading,
       testimonials,
       handleImageError,
-      handleImageLoad
+      handleImageLoad,
+      isModalOpen,
+      selectedTestimonial,
+      openModal,
+      closeModal
     }
   }
 }

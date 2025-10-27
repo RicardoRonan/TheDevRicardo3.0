@@ -91,11 +91,11 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import NavBar from './NavBar.vue'
-import ProjectListItem from './ProjectListItem.vue'
-import ProjectDetail from './ProjectDetail.vue'
-import Footer from './Footer.vue'
-import SimpleRetroLoading from './SimpleRetroLoading.vue'
+import NavBar from '../components/layout/NavBar.vue'
+import ProjectListItem from '../components/project/ProjectListItem.vue'
+import ProjectDetail from '../components/project/ProjectDetail.vue'
+import Footer from '../components/layout/Footer.vue'
+import SimpleRetroLoading from '../components/ui/SimpleRetroLoading.vue'
 
 export default {
   name: 'Projects',
@@ -119,7 +119,6 @@ export default {
         description: "My first portfolio website built with Vue.js, featuring a modern design, smooth animations, and Firebase integration for dynamic content management. This marked the beginning of my journey as a web developer.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Firebase", "Responsive Design", "Animations"],
         liveLink: "https://original-the-dev-ricardo.netlify.app/",
-        githubLink: "https://github.com/RicardoRonan/vue-portfolio",
         img: "https://i.postimg.cc/htTnbRjT/image.png",
         landingImage: "https://i.postimg.cc/htTnbRjT/image.png",
         category: "featured",
@@ -131,7 +130,6 @@ export default {
         description: "An evolved version of my portfolio with enhanced design, improved performance, and additional features. Showcasing my growth as a developer with better code organization and user experience.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Firebase", "Responsive Design", "Performance Optimization"],
         liveLink: "https://thedevricardo-e8d7f.web.app/",
-        githubLink: "https://github.com/RicardoRonan/TheDevRicardo2.0",
         img: "https://i.postimg.cc/Y9qWYqVg/image.png",
         landingImage: "https://i.postimg.cc/Y9qWYqVg/image.png",
         category: "featured",
@@ -146,8 +144,7 @@ export default {
         company: "Personal Project",
         description: "A comprehensive color palette design tool with an intuitive control panel. Features real-time color customization, live preview on professional templates, accessibility checks, and multiple export formats for designers and developers.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Color Theory", "Design Tools", "Accessibility", "Export Features"],
-        liveLink: "https://github.com/RicardoRonan/ChooseAFeel",
-        githubLink: "https://github.com/RicardoRonan/choose-a-feel",
+        liveLink: "https://choose-a-feel.netlify.app/",
         img: "https://i.postimg.cc/FKG0RqjQ/image.png", 
         landingImage: "https://i.postimg.cc/FKG0RqjQ/image.png",
         category: "personal",
@@ -159,7 +156,6 @@ export default {
         description: "A comprehensive business website for Clear Future SA, featuring modern design, service information, and client testimonials. Built with WordPress for easy content management.",
         tech: ["WordPress", "PHP", "CSS3", "JavaScript", "SEO Optimization"],
         liveLink: "https://clearfuturesa.co.za/",
-        githubLink: "N/A",
         img: "https://i.postimg.cc/yNgK7JRD/image.png",
         landingImage: "https://i.postimg.cc/yNgK7JRD/image.png",
         category: "client",
@@ -171,7 +167,6 @@ export default {
         description: "A dynamic business website showcasing Damons Dynasty services and portfolio. Features include image galleries, contact forms, and mobile-responsive design.",
         tech: ["WordPress", "PHP", "CSS3", "JavaScript", "Image Galleries"],
         liveLink: "https://damonsdynasty.co.za/",
-        githubLink: "N/A",
         img: "https://i.postimg.cc/TYKHgjw0/image.png",
         landingImage: "https://i.postimg.cc/TYKHgjw0/image.png",
         category: "client",
@@ -183,7 +178,6 @@ export default {
         description: "A professional cleaning services website built with WordPress. Features include service listings, contact forms, and responsive design optimized for local business needs.",
         tech: ["WordPress", "PHP", "CSS3", "JavaScript", "Contact Forms"],
         liveLink: "https://spottless.co.za/",
-        githubLink: "N/A",
         img: "https://i.postimg.cc/qBL4Cqyj/image.png",
         landingImage: "https://i.postimg.cc/qBL4Cqyj/image.png",
         category: "client",
@@ -196,7 +190,6 @@ export default {
         description: "A comprehensive gaming statistics and analytics dashboard application. Features session tracking, player leaderboards, game statistics, and interactive data visualization with modern UI/UX design for gaming communities.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Chart.js", "Data Visualization", "Gaming Analytics", "Dashboard"],
         liveLink: "https://statsmanne.netlify.app/",
-        githubLink: "https://github.com/RicardoRonan/statsmanne",
         img: "https://i.postimg.cc/Nj4JwdPv/image.png",
         landingImage: "https://i.postimg.cc/Nj4JwdPv/image.png",
         category: "personal",

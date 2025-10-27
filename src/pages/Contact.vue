@@ -129,8 +129,8 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import NavBar from './NavBar.vue'
-import Footer from './Footer.vue'
+import NavBar from '../components/layout/NavBar.vue'
+import Footer from '../components/layout/Footer.vue'
 
 export default {
   name: 'Contact',

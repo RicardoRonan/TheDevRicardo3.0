@@ -82,7 +82,7 @@
 
 <script>
 import { ref } from 'vue'
-import PDFViewer from './PDFViewer.vue'
+import PDFViewer from '../ui/PDFViewer.vue'
 
 export default {
   name: 'Footer',

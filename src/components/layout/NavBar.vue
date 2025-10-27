@@ -196,8 +196,8 @@
 <script>
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import ThemeToggle from './ThemeToggle.vue'
-import { preventBodyScroll, restoreBodyScroll, forceRestoreBodyScroll } from '../utils/scrollPrevention.js'
+import ThemeToggle from '../ui/ThemeToggle.vue'
+import { preventBodyScroll, restoreBodyScroll, forceRestoreBodyScroll } from '../../utils/scrollPrevention.js'
 
 export default {
   name: 'NavBar',

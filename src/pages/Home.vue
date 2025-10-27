@@ -110,10 +110,10 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import NavBar from './NavBar.vue'
-import Hero from './Hero.vue'
-import Footer from './Footer.vue'
-import IntroAnimation from './IntroAnimation.vue'
+import NavBar from '../components/layout/NavBar.vue'
+import Hero from '../components/Hero.vue'
+import Footer from '../components/layout/Footer.vue'
+import IntroAnimation from '../components/IntroAnimation.vue'
 
 export default {
   name: 'Portfolio',

@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Portfolio from '../components/Portfolio.vue'
-import Projects from '../components/Projects.vue'
-import AboutPage from '../components/AboutPage.vue'
-import Resources from '../components/Resources.vue'
-import Contact from '../components/Contact.vue'
-import Testimonials from '../components/Testimonials.vue'
+import Home from '../pages/Home.vue'
+import Projects from '../pages/Projects.vue'
+import About from '../pages/About.vue'
+import Resources from '../pages/Resources.vue'
+import Contact from '../pages/Contact.vue'
+import Testimonials from '../pages/Testimonials.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Portfolio
+    component: Home
   },
   {
     path: '/projects',
@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: AboutPage
+    component: About
   },
   {
     path: '/resources',

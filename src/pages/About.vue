@@ -14,7 +14,7 @@
       <section id="about" class="pt-24 py-8 md:py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-8 md:mb-16">
-            <img src="/src/assets/frog.svg" alt="About Me" class="w-24 h-24 object-cover portfolio-icon flex justify-center items-center mx-auto mb-4"></img>
+            <img src="https://i.postimg.cc/wjbp1VTd/icons-3.png" alt="About Me" class="w-24 h-24 object-cover portfolio-icon flex justify-center items-center mx-auto mb-4"></img>
             <h1 class="font-pixelify font-bold text-3xl sm:text-4xl md:text-5xl text-theme mb-3 md:mb-4">
               About Me
             </h1>
@@ -151,9 +151,9 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import NavBar from './NavBar.vue'
-import Footer from './Footer.vue'
-import PDFViewer from './PDFViewer.vue'
+import NavBar from '../components/layout/NavBar.vue'
+import Footer from '../components/layout/Footer.vue'
+import PDFViewer from '../components/ui/PDFViewer.vue'
 
 export default {
   name: 'AboutPage',
