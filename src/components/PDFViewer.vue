@@ -9,7 +9,6 @@
       <!-- Modal Content -->
       <div 
         class="bg-theme-light border-2 border-theme rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden transition-all duration-300"
-        :class="{ 'fixed inset-4 max-w-none max-h-none rounded-none': isFullscreen }"
         @click.stop
       >
         <!-- Header -->
@@ -18,18 +17,10 @@
             Ricardo Moses - Resume
           </h3>
           <div class="flex items-center gap-2">
-            <!-- Full Screen Button -->
-            <button 
-              @click="toggleFullscreen"
-              class="px-3 py-1 bg-theme text-theme-light font-pixelify text-sm rounded-lg hover:bg-opacity-80 transition-all duration-300"
-              title="Toggle Full Screen"
-            >
-              {{ isFullscreen ? 'Exit Full' : 'Full Screen' }}
-            </button>
             <!-- Download Button -->
             <button 
               @click="downloadPDF"
-              class="px-3 py-1 bg-theme text-theme-light font-pixelify text-sm rounded-lg hover:bg-opacity-80 transition-all duration-300"
+              class="px-3 py-1 bg-theme text-theme font-pixelify text-sm rounded-lg hover:bg-opacity-80 transition-all duration-300"
               title="Download PDF"
             >
               Download
@@ -37,7 +28,7 @@
             <!-- Close Button -->
             <button 
               @click="closeViewer"
-              class="w-8 h-8 bg-theme text-theme-light font-pixelify text-lg rounded-lg hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center"
+              class="w-8 h-8 bg-theme text-theme font-pixelify text-lg rounded-lg hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center"
               title="Close"
             >
               ×
@@ -46,7 +37,7 @@
         </div>
 
         <!-- PDF Content -->
-        <div class="p-4 overflow-auto max-h-[calc(90vh-80px)]" :class="{ 'max-h-[calc(100vh-80px)]': isFullscreen }">
+        <div class="p-4 overflow-auto max-h-[calc(90vh-80px)]">
           <div v-if="loading" class="flex items-center justify-center py-12">
             <div class="text-center">
               <div class="retro-loading mb-4"></div>
@@ -103,7 +94,6 @@ export default {
     const loading = ref(true)
     const error = ref(false)
     const pdfSource = ref(props.pdfUrl)
-    const isFullscreen = ref(false)
     const zoomLevel = ref(1)
 
     const closeViewer = () => {
@@ -120,9 +110,6 @@ export default {
       document.body.removeChild(link)
     }
 
-    const toggleFullscreen = () => {
-      isFullscreen.value = !isFullscreen.value
-    }
 
 
     const resetZoom = () => {
@@ -145,15 +132,7 @@ export default {
       
       switch (event.key) {
         case 'Escape':
-          if (isFullscreen.value) {
-            isFullscreen.value = false
-          } else {
-            closeViewer()
-          }
-          break
-        case 'F11':
-          event.preventDefault()
-          toggleFullscreen()
+          closeViewer()
           break
         case '0':
           event.preventDefault()
@@ -167,7 +146,6 @@ export default {
       if (newValue) {
         loading.value = true
         error.value = false
-        isFullscreen.value = false
         zoomLevel.value = 1
         // Add keyboard event listener
         document.addEventListener('keydown', handleKeydown)
@@ -190,11 +168,9 @@ export default {
       loading,
       error,
       pdfSource,
-      isFullscreen,
       zoomLevel,
       closeViewer,
       downloadPDF,
-      toggleFullscreen,
       resetZoom,
       onPdfLoaded,
       onPdfError
@@ -229,15 +205,6 @@ export default {
   max-height: calc(90vh - 120px);
 }
 
-/* Fullscreen mode adjustments */
-.fixed.inset-4 .pdf-content {
-  max-height: calc(100vh - 120px);
-}
-
-.fixed.inset-4 .pdf-iframe {
-  height: calc(100vh - 200px);
-  min-height: 600px;
-}
 
 .retro-loading {
   width: 40px;

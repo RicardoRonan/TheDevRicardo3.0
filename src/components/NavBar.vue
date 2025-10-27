@@ -4,7 +4,8 @@
       <div class="flex items-center justify-between h-full w-full">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <router-link to="/" class="block">
+          <router-link to="/" class="block flex items-center gap-2">
+            <img src="/src/assets/pixel-rick-icon.svg" alt="TheDevRicardo" class="w-8 h-8" />
             <h1 class="font-pixelify font-bold text-xl text-theme hover:text-accent-red transition-colors duration-150 cursor-pointer">
               TheDevRicardo
             </h1>
