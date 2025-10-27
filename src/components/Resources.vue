@@ -25,16 +25,16 @@
         </div>
         
         <!-- Full Width Search Bar -->
-        <div class="w-full px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="w-full px-4 sm:px-6 lg:px-8 mb-6 md:mb-8">
           <div class="relative max-w-4xl mx-auto">
             <input
               v-model="searchQuery"
               type="text"
               placeholder="Search resources..."
               id="search-resources"
-              class="w-full px-4 py-3 pl-12 pr-4 bg-theme-light border border-theme rounded-lg focus:border-accent-red focus:outline-none transition-colors duration-300 font-pixelify text-theme placeholder-theme/60"
+              class="w-full px-4 py-3 pl-12 pr-4 bg-theme-light border border-theme rounded-lg focus:border-accent-red focus:outline-none transition-colors duration-300 font-pixelify text-theme placeholder-theme/60 text-sm md:text-base"
             />
-            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-theme/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-theme/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
@@ -42,13 +42,13 @@
 
         <!-- Category Filters -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-wrap justify-center gap-2 mb-8">
+          <div class="flex flex-wrap justify-center gap-2 mb-6 md:mb-8">
             <button
               v-for="category in categories"
               :key="category"
               @click="selectedCategory = category"
               :class="[
-                'px-4 py-2 rounded-full font-pixelify text-sm transition-all duration-300',
+                'px-3 py-2 md:px-4 rounded-full font-pixelify text-xs md:text-sm transition-all duration-300 whitespace-nowrap',
                 selectedCategory === category
                   ? 'bg-accent-red text-white'
                   : 'bg-theme-light text-theme hover:bg-theme hover:text-theme-light border border-theme'
@@ -64,47 +64,73 @@
       <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Results Counter -->
-          <div class="mb-8">
-            <p class="font-pixelify text-theme/75 text-center">
+          <div class="mb-6 md:mb-8">
+            <p class="font-pixelify text-theme/75 text-center text-sm md:text-base">
               Showing {{ filteredResources.length }} of {{ allResources.length }} resources
             </p>
           </div>
 
           <!-- Resources List -->
           <div v-if="filteredResources.length > 0" class="max-w-5xl mx-auto">
-            <div class="space-y-6">
+            <div class="space-y-4 md:space-y-6">
               <div 
                 v-for="resource in filteredResources" 
                 :key="resource.name" 
-                class="bg-theme-light rounded-xl p-8 border border-theme hover:border-accent-red transition-all duration-300 hover:shadow-lg group"
-                style="height: 10rem;"
+                class="bg-theme-light rounded-xl p-4 md:p-6 border border-theme hover:border-accent-red transition-all duration-300 hover:shadow-lg group h-auto md:h-32"
               >
-                <div class="flex items-start justify-between gap-6">
-                  <div class="flex items-start flex-1 gap-6">
-                    <div class="flex-1 min-w-0">
-                      <div class="flex items-start justify-between mb-3">
-                        <h3 class="font-pixelify font-bold text-xl text-theme group-hover:text-accent-red transition-colors">{{ resource.name }}</h3>
-                        <div class="flex items-center gap-3 ml-6 flex-shrink-0">
-                          <span class="px-3 py-1 bg-theme/10 text-theme text-xs font-pixelify rounded-full">{{ resource.type }}</span>
-                          <span v-if="resource.format" class="text-xs text-theme/60 font-pixelify">{{ resource.format }}</span>
-                        </div>
-                      </div>
-                      <p class="font-pixelify text-sm text-theme opacity-75 mb-3">{{ resource.category }}</p>
-                      <p class="font-pixelify text-base text-theme leading-relaxed">{{ resource.description }}</p>
+                <!-- Mobile Layout -->
+                <div class="block md:hidden">
+                  <div class="flex items-start justify-between mb-3">
+                    <h3 class="font-pixelify font-bold text-lg text-theme group-hover:text-accent-red transition-colors flex-1 pr-2">{{ resource.name }}</h3>
+                    <div class="flex flex-col items-end gap-1 flex-shrink-0">
+                      <span class="px-2 py-1 bg-theme/10 text-theme text-xs font-pixelify rounded-full">{{ resource.type }}</span>
+                      <span v-if="resource.format" class="text-xs text-theme/60 font-pixelify text-right">{{ resource.format }}</span>
                     </div>
                   </div>
-                  <div class="flex-shrink-0">
-                    <a 
-                      :href="resource.link" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center text-accent-red font-pixelify font-semibold text-sm hover:underline group-hover:text-accent-red/80 transition-colors px-4 py-2 rounded-lg hover:bg-accent-red/10"
-                    >
-                      {{ resource.type === 'Download' ? 'Download' : 'Visit' }}
-                      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                      </svg>
-                    </a>
+                  <p class="font-pixelify text-sm text-theme opacity-75 mb-3">{{ resource.category }}</p>
+                  <p class="font-pixelify text-sm text-theme leading-relaxed mb-4 line-clamp-3">{{ resource.description }}</p>
+                  <a 
+                    :href="resource.link" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center text-accent-red font-pixelify font-semibold text-sm hover:underline group-hover:text-accent-red/80 transition-colors px-3 py-2 rounded-lg hover:bg-accent-red/10 w-full justify-center"
+                  >
+                    {{ resource.type === 'Download' ? 'Download' : 'Visit' }}
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Desktop Layout -->
+                <div class="hidden md:block">
+                  <div class="flex items-start justify-between gap-6">
+                    <div class="flex items-start flex-1 gap-6">
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-start justify-between mb-3">
+                          <h3 class="font-pixelify font-bold text-xl text-theme group-hover:text-accent-red transition-colors">{{ resource.name }}</h3>
+                          <div class="flex items-center gap-3 ml-6 flex-shrink-0">
+                            <span class="px-3 py-1 bg-theme/10 text-theme text-xs font-pixelify rounded-full">{{ resource.type }}</span>
+                            <span v-if="resource.format" class="text-xs text-theme/60 font-pixelify">{{ resource.format }}</span>
+                          </div>
+                        </div>
+                        <p class="font-pixelify text-sm text-theme opacity-75 mb-3">{{ resource.category }}</p>
+                        <p class="font-pixelify text-base text-theme leading-relaxed">{{ resource.description }}</p>
+                      </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                      <a 
+                        :href="resource.link" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center text-accent-red font-pixelify font-semibold text-sm hover:underline group-hover:text-accent-red/80 transition-colors px-4 py-2 rounded-lg hover:bg-accent-red/10"
+                      >
+                        {{ resource.type === 'Download' ? 'Download' : 'Visit' }}
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,10 +138,10 @@
           </div>
 
           <!-- No Results -->
-          <div v-else class="text-center py-16">
-            <div class="text-6xl mb-4">🔍</div>
-            <h3 class="font-pixelify font-bold text-2xl text-theme mb-2">No resources found</h3>
-            <p class="font-pixelify text-theme/75">Try adjusting your search or filter criteria</p>
+          <div v-else class="text-center py-12 md:py-16">
+            <div class="text-4xl md:text-6xl mb-4">🔍</div>
+            <h3 class="font-pixelify font-bold text-xl md:text-2xl text-theme mb-2">No resources found</h3>
+            <p class="font-pixelify text-theme/75 text-sm md:text-base">Try adjusting your search or filter criteria</p>
           </div>
         </div>
       </section>
@@ -400,5 +426,13 @@ export default {
 <style scoped>
 #search-resources {
   width: 100%;
+}
+
+/* Line clamp utility for mobile text truncation */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>

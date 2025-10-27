@@ -11,7 +11,7 @@ A modern, responsive portfolio showcasing my work as a creative developer. Built
 [![Vite](https://img.shields.io/badge/Vite-5.0.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-[🌐 **Live Demo**](https://thedevricardo3.netlify.app/) • [📧 **Contact**](mailto:your-email@example.com) • [💼 **LinkedIn**](https://linkedin.com/in/your-profile)
+[🌐 **Live Demo**](https://thedevricardo3.netlify.app/) • [📧 **Contact**](mailto:ricardoronanm@gmail.com) • [💼 **LinkedIn**](https://www.linkedin.com/in/the-dev-ricardo/)
 
 </div>
 
@@ -49,7 +49,7 @@ A modern, responsive portfolio showcasing my work as a creative developer. Built
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/TheDevRicardo3.0.git
+   git clone https://github.com/RicardoRonan/TheDevRicardo3.0.git
    cd TheDevRicardo3.0
    ```
 
@@ -209,10 +209,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-**Built with ❤️ by [Ricardo Moses](https://github.com/your-username)**
+**Built with ❤️ by [Ricardo Moses](https://github.com/RicardoRonan)**
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RicardoRonan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/the-dev-ricardo/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://thedevricardo3.netlify.app/)
 
 </div>

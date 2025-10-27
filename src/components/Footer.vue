@@ -51,12 +51,12 @@
           <h3 class="font-pixelify font-semibold text-lg mb-4 text-theme">Social</h3>
           <ul class="space-y-2">
             <li>
-              <a href="https://github.com/TheDevRicardo" target="_blank" rel="noopener noreferrer" class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify">
+              <a href="https://github.com/RicardoRonan" target="_blank" rel="noopener noreferrer" class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify">
                 GitHub
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/thedevricardo" target="_blank" rel="noopener noreferrer" class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify">
+              <a href="https://www.linkedin.com/in/the-dev-ricardo/" target="_blank" rel="noopener noreferrer" class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify">
                 LinkedIn
               </a>
             </li>
