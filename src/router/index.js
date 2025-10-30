@@ -3,6 +3,8 @@ import Home from '../pages/Home.vue'
 import Projects from '../pages/Projects.vue'
 import About from '../pages/About.vue'
 import Resources from '../pages/Resources.vue'
+import Blog from '../pages/Blog.vue'
+import BlogPost from '../pages/BlogPost.vue'
 import Contact from '../pages/Contact.vue'
 import Testimonials from '../pages/Testimonials.vue'
 
@@ -26,6 +28,16 @@ const routes = [
     path: '/resources',
     name: 'Resources',
     component: Resources
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Blog
+  },
+  {
+    path: '/blog/:slug',
+    name: 'BlogPost',
+    component: BlogPost
   },
   {
     path: '/contact',

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Dev Ricardo Blog</title>
+    <description>Latest articles on web development, design, and technology by Ricardo Moses</description>
+    <link>https://thedevricardo.com/blog</link>
+    <atom:link href="https://thedevricardo.com/blog-rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>2024-01-15T00:00:00Z</lastBuildDate>
+    <managingEditor>ricardo@thedevricardo.com (Ricardo Moses)</managingEditor>
+    <webMaster>ricardo@thedevricardo.com (Ricardo Moses)</webMaster>
+    <image>
+      <url>https://thedevricardo.com/src/assets/pixel-rick-icon.svg</url>
+      <title>The Dev Ricardo Blog</title>
+      <link>https://thedevricardo.com/blog</link>
+    </image>
+    <item>
+      <title><![CDATA[Building Modern Web Applications with Vue 3]]></title>
+      <description><![CDATA[Discover the power of Vue 3's Composition API and how it revolutionizes component development]]></description>
+      <link>https://thedevricardo.com/blog/building-modern-web-applications-with-vue-3</link>
+      <guid isPermaLink="true">https://thedevricardo.com/blog/building-modern-web-applications-with-vue-3</guid>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+      <author>Ricardo Moses</author>
+      <category>Tutorial</category>
+      <category>vue</category>
+      <category>javascript</category>
+      <category>frontend</category>
+      <category>tutorial</category>
+    </item>
+    <item>
+      <title><![CDATA[CSS Grid vs Flexbox: When to Use Which]]></title>
+      <description><![CDATA[A comprehensive comparison of CSS Grid and Flexbox to help you choose the right layout method]]></description>
+      <link>https://thedevricardo.com/blog/css-grid-vs-flexbox-when-to-use-which</link>
+      <guid isPermaLink="true">https://thedevricardo.com/blog/css-grid-vs-flexbox-when-to-use-which</guid>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
+      <author>Ricardo Moses</author>
+      <category>Design</category>
+      <category>css</category>
+      <category>layout</category>
+      <category>frontend</category>
+      <category>design</category>
+    </item>
+  </channel>
+</rss>
+
+

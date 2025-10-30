@@ -60,6 +60,12 @@
                   >
                     All Resources
                   </router-link>
+                  <router-link 
+                    to="/blog"
+                    class="block px-4 py-2 text-theme hover:bg-theme-light hover:text-accent-red transition-colors duration-150 font-pixelify"
+                  >
+                    Blog
+                  </router-link>
                   <div class="border-t border-theme my-1"></div>
                   <router-link 
                     to="/testimonials"
@@ -158,11 +164,21 @@
             <span v-if="$route.path === '/resources'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
           </router-link>
           <router-link 
+            to="/blog" 
+            @click="closeMobileMenu"
+            class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
+            :class="{ 'text-accent-red bg-theme-light': $route.path === '/blog', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
+            :style="{ 'transition-delay': '0.275s' }"
+          >
+            Blog
+            <span v-if="$route.path === '/blog'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
+          </router-link>
+          <router-link 
             to="/testimonials" 
             @click="closeMobileMenu"
             class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
             :class="{ 'text-accent-red bg-theme-light': $route.path === '/testimonials', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-            :style="{ 'transition-delay': '0.275s' }"
+            :style="{ 'transition-delay': '0.3s' }"
           >
             Testimonials
             <span v-if="$route.path === '/testimonials'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
