@@ -179,7 +179,7 @@ export default {
         company: 'Payment24',
         duration: 'Mar 2023 – May 2025',
         location: 'Remote',
-        description: 'Developed customer-facing dashboards with Vue.js and Bootstrap. Refactored front-end modules for performance and integrated REST APIs into .NET systems.',
+        description: 'Worked on fullstack Microsoft projects using .NET, SQL Server, and Azure. Fintech systems and Banking ,Standard Bank Fleet Managment systems website.',
         skills: ['Vue.js', 'Bootstrap', 'REST APIs', '.NET', 'Performance Optimization', 'Frontend Development']
       },
       {
