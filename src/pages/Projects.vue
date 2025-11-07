@@ -185,7 +185,7 @@ export default {
       // Personal/Fun Projects
       {
         id: 10,
-        title: "Statsmanne",
+        title: "Game Stats App",
         company: "Personal Project",
         description: "A comprehensive gaming statistics and analytics dashboard application. Features session tracking, player leaderboards, game statistics, and interactive data visualization with modern UI/UX design for gaming communities.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Chart.js", "Data Visualization", "Gaming Analytics", "Dashboard"],
