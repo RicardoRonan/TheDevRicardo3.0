@@ -2,9 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import Projects from '../pages/Projects.vue'
 import About from '../pages/About.vue'
-import Resources from '../pages/Resources.vue'
+import Tools from '../pages/Tools.vue'
 import Contact from '../pages/Contact.vue'
 import Testimonials from '../pages/Testimonials.vue'
+import Blog from '../pages/Blog.vue'
+// import Services from '../pages/Services.vue'
 
 const routes = [
   {
@@ -22,10 +24,15 @@ const routes = [
     name: 'About',
     component: About
   },
+  // {
+  //   path: '/services',
+  //   name: 'Services',
+  //   component: Services
+  // },
   {
-    path: '/resources',
-    name: 'Resources',
-    component: Resources
+    path: '/tools',
+    name: 'Tools',
+    component: Tools
   },
   {
     path: '/contact',
@@ -36,6 +43,11 @@ const routes = [
     path: '/testimonials',
     name: 'Testimonials',
     component: Testimonials
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Blog
   }
 ]
 

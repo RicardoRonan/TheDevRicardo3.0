@@ -14,9 +14,9 @@
       <section class="pt-24 pt-16 md:pt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <img src="https://i.postimg.cc/52xz48sW/resources.png" alt="Resources" class="w-24 h-24 object-cover portfolio-icon flex justify-center items-center mx-auto mb-4"></img>
+            <img src="https://i.postimg.cc/52xz48sW/resources.png" alt="Tools" class="w-24 h-24 object-cover portfolio-icon flex justify-center items-center mx-auto mb-4"></img>
             <h1 class="font-pixelify font-bold text-4xl md:text-5xl text-theme mb-4">
-              Resources
+              Tools
             </h1>
             <p class="font-pixelify text-lg text-theme max-w-2xl mx-auto mb-8">
               A curated collection of tools, guides, and resources to help you succeed
@@ -30,8 +30,8 @@
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Search resources..."
-              id="search-resources"
+              placeholder="Search tools..."
+              id="search-tools"
               class="w-full px-4 py-3 pl-12 pr-4 bg-theme-light border border-theme rounded-lg focus:border-accent-red focus:outline-none transition-colors duration-300 font-pixelify text-theme placeholder-theme/60 text-sm md:text-base"
             />
             <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-theme/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,17 +60,17 @@
         </div>
       </section>
 
-      <!-- Resources Grid Section -->
+      <!-- Tools Grid Section -->
       <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Results Counter -->
           <div class="mb-6 md:mb-8">
             <p class="font-pixelify text-theme/75 text-center text-sm md:text-base">
-              Showing {{ filteredResources.length }} of {{ allResources.length }} resources
+              Showing {{ filteredResources.length }} of {{ allResources.length }} tools
             </p>
           </div>
 
-          <!-- Resources List -->
+          <!-- Tools List -->
           <div v-if="filteredResources.length > 0" class="max-w-5xl mx-auto">
             <div class="space-y-4 md:space-y-6">
               <div 
@@ -140,7 +140,7 @@
           <!-- No Results -->
           <div v-else class="text-center py-12 md:py-16">
             <div class="text-4xl md:text-6xl mb-4">🔍</div>
-            <h3 class="font-pixelify font-bold text-xl md:text-2xl text-theme mb-2">No resources found</h3>
+            <h3 class="font-pixelify font-bold text-xl md:text-2xl text-theme mb-2">No tools found</h3>
             <p class="font-pixelify text-theme/75 text-sm md:text-base">Try adjusting your search or filter criteria</p>
           </div>
         </div>
@@ -169,7 +169,7 @@ import NavBar from '../components/layout/NavBar.vue'
 import Footer from '../components/layout/Footer.vue'
 
 export default {
-  name: 'Resources',
+  name: 'Tools',
   components: {
     NavBar,
     Footer
@@ -424,7 +424,7 @@ export default {
 }
 </script>
 <style scoped>
-#search-resources {
+#search-tools {
   width: 100%;
 }
 
@@ -436,3 +436,4 @@ export default {
   overflow: hidden;
 }
 </style>
+

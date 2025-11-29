@@ -31,6 +31,14 @@
               About
               <span v-if="$route.path === '/about'" class="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-red"></span>
             </router-link>
+            <!-- <router-link 
+              to="/services" 
+              class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify relative"
+              :class="{ 'text-accent-red': $route.path === '/services' }"
+            >
+              Services
+              <span v-if="$route.path === '/services'" class="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-red"></span>
+            </router-link> -->
             <router-link 
               to="/projects" 
               class="text-theme hover:text-accent-red transition-colors duration-150 font-pixelify relative"
@@ -55,10 +63,17 @@
               <div class="absolute top-full left-0 w-48 bg-theme border border-theme rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div class="py-2">
                   <router-link 
-                    to="/resources"
+                    to="/tools"
                     class="block px-4 py-2 text-theme hover:bg-theme-light hover:text-accent-red transition-colors duration-150 font-pixelify"
                   >
-                    All Resources
+                    All Tools
+                  </router-link>
+                  <div class="border-t border-theme my-1"></div>
+                  <router-link 
+                    to="/blog"
+                    class="block px-4 py-2 text-theme hover:bg-theme-light hover:text-accent-red transition-colors duration-150 font-pixelify"
+                  >
+                    Blog
                   </router-link>
                   <div class="border-t border-theme my-1"></div>
                   <router-link 
@@ -102,21 +117,22 @@
         </div>
       </div>
 
-      <!-- Mobile Menu Backdrop -->
+      <!-- Mobile Menu Backdrop (covers the entire screen, blurring pushed content) -->
       <div 
         v-if="isMobileMenuOpen"
         @click="closeMobileMenu"
-        class="md:hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out"
-        :class="isMobileMenuOpen ? 'opacity-100' : 'opacity-0'"
-      ></div>
-
-      <!-- Mobile Navigation Menu -->
-      <div 
-        v-if="isMobileMenuOpen"
-        class="md:hidden fixed top-14 left-0 right-0 bg-theme border-t border-theme shadow-lg z-50 transform transition-all duration-300 ease-in-out"
-        :class="isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'"
+        class="md:hidden fixed top-0 left-0 right-0 bottom-0 z-40 transition-all duration-300 ease-in-out pointer-events-auto"
       >
-        <div class="px-4 py-6 space-y-4">
+        <!-- Blurred content area covering the visible left 25% of pushed content -->
+        <div class="absolute top-0 left-0 bottom-0 w-[25%] bg-black/60 backdrop-blur-lg"></div>
+      </div>
+
+      <!-- Mobile Navigation Menu - Side Drawer from Right (always positioned, off-screen when closed) -->
+      <div 
+        class="md:hidden fixed top-0 right-0 bottom-0 w-3/4 bg-theme border-l border-theme shadow-2xl z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto"
+        :class="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'"
+      >
+        <div class="pt-16 px-4 py-6 space-y-4">
           <router-link 
             to="/" 
             @click="closeMobileMenu"
@@ -137,32 +153,42 @@
             About
             <span v-if="$route.path === '/about'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
           </router-link>
+          <!-- <router-link 
+            to="/services" 
+            @click="closeMobileMenu"
+            class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
+            :class="{ 'text-accent-red bg-theme-light': $route.path === '/services', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
+            :style="{ 'transition-delay': '0.2s' }"
+          >
+            Services
+            <span v-if="$route.path === '/services'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
+          </router-link> -->
           <router-link 
             to="/projects" 
             @click="closeMobileMenu"
             class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
             :class="{ 'text-accent-red bg-theme-light': $route.path === '/projects', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-            :style="{ 'transition-delay': '0.2s' }"
+            :style="{ 'transition-delay': '0.25s' }"
           >
             Projects
             <span v-if="$route.path === '/projects'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
           </router-link>
           <router-link 
-            to="/resources" 
+            to="/tools" 
             @click="closeMobileMenu"
             class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
-            :class="{ 'text-accent-red bg-theme-light': $route.path === '/resources', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-            :style="{ 'transition-delay': '0.25s' }"
+            :class="{ 'text-accent-red bg-theme-light': $route.path === '/tools', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
+            :style="{ 'transition-delay': '0.3s' }"
           >
-            Resources
-            <span v-if="$route.path === '/resources'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
+            Tools
+            <span v-if="$route.path === '/tools'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
           </router-link>
           <router-link 
             to="/testimonials" 
             @click="closeMobileMenu"
             class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
             :class="{ 'text-accent-red bg-theme-light': $route.path === '/testimonials', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-            :style="{ 'transition-delay': '0.275s' }"
+            :style="{ 'transition-delay': '0.35s' }"
           >
             Testimonials
             <span v-if="$route.path === '/testimonials'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
@@ -172,7 +198,7 @@
             @click="closeMobileMenu"
             class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
             :class="{ 'text-accent-red bg-theme-light': $route.path === '/contact', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-            :style="{ 'transition-delay': '0.325s' }"
+            :style="{ 'transition-delay': '0.4s' }"
           >
             Contact
             <span v-if="$route.path === '/contact'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
@@ -181,7 +207,7 @@
           <!-- Theme Toggle for Mobile -->
           <div class="pt-4 border-t border-theme transform transition-all duration-300 ease-out"
                :class="{ 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-               :style="{ 'transition-delay': '0.375s' }">
+               :style="{ 'transition-delay': '0.45s' }">
             <div class="flex items-center justify-between">
               <span class="font-pixelify text-theme">Theme</span>
               <ThemeToggle />
@@ -220,8 +246,35 @@ export default {
     watch(isMobileMenuOpen, (isOpen) => {
       if (isOpen) {
         preventBodyScroll()
+        // Apply transform to #app element to push content to the left
+        // Navbar takes 75% from right, so content moves left showing 25% on left (blurred)
+        if (typeof document !== 'undefined') {
+          const appElement = document.getElementById('app')
+          if (appElement) {
+            // Move content 75vw to the left, leaving 25vw visible on the left
+            appElement.style.transform = 'translateX(-75vw)'
+            appElement.style.transition = 'transform 300ms ease-in-out'
+          }
+          // Prevent horizontal overflow
+          document.documentElement.style.overflowX = 'hidden'
+          document.body.style.overflowX = 'hidden'
+        }
       } else {
         restoreBodyScroll()
+        // Remove transform from #app element
+        if (typeof document !== 'undefined') {
+          const appElement = document.getElementById('app')
+          if (appElement) {
+            appElement.style.transform = 'translateX(0)'
+            setTimeout(() => {
+              appElement.style.transform = ''
+              appElement.style.transition = ''
+            }, 300)
+          }
+          // Restore overflow
+          document.documentElement.style.overflowX = ''
+          document.body.style.overflowX = ''
+        }
       }
     })
 
@@ -237,14 +290,26 @@ export default {
       }
     }
 
-    // Add event listener for escape key
-    if (typeof window !== 'undefined') {
-      window.addEventListener('keydown', handleKeydown)
-    }
+    // Add event listener for escape key on mount
+    onMounted(() => {
+      if (typeof window !== 'undefined') {
+        window.addEventListener('keydown', handleKeydown)
+      }
+    })
 
     // Cleanup on component unmount
     onUnmounted(() => {
       restoreBodyScroll()
+      // Reset app transform and overflow
+      if (typeof document !== 'undefined') {
+        const appElement = document.getElementById('app')
+        if (appElement) {
+          appElement.style.transform = ''
+          appElement.style.transition = ''
+        }
+        document.documentElement.style.overflowX = ''
+        document.body.style.overflowX = ''
+      }
       if (typeof window !== 'undefined') {
         window.removeEventListener('keydown', handleKeydown)
       }

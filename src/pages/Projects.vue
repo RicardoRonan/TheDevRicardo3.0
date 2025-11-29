@@ -112,6 +112,15 @@ export default {
     
     // Featured projects (portfolio iterations)
     const featuredProjects = ref([
+    {  id: 1,
+        title: "The Meta Stack ",
+        company: "Personal Project",
+        description: "A digital community platform for developers, designers, and creators to share knowledge, build innovative solutions together.",
+        tech: ["Vue.js", "CSS3", "JavaScript", "Firebase", "Responsive Design", "Animations"],
+        liveLink: "https://themetastack.com/",
+        img: "https://i.postimg.cc/V6Wx8Mn2/Meta-Stack-Developer-Community-Platform.png",
+        landingImage: "https://i.postimg.cc/V6Wx8Mn2/Meta-Stack-Developer-Community-Platform.png",
+        category: "featured",},
       {
         id: 1,
         title: "The Dev Ricardo 1.0",
