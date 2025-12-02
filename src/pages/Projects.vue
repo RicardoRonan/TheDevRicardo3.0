@@ -149,7 +149,7 @@ export default {
       // Client Projects
       {
         id: 11,
-        title: "ChooseAFeel",
+        title: "ColoursPal",
         company: "Personal Project",
         description: "A comprehensive color palette design tool with an intuitive control panel. Features real-time color customization, live preview on professional templates, accessibility checks, and multiple export formats for designers and developers.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Color Theory", "Design Tools", "Accessibility", "Export Features"],
