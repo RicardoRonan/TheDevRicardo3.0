@@ -153,7 +153,7 @@ export default {
         company: "Personal Project",
         description: "A comprehensive color palette design tool with an intuitive control panel. Features real-time color customization, live preview on professional templates, accessibility checks, and multiple export formats for designers and developers.",
         tech: ["Vue.js", "CSS3", "JavaScript", "Color Theory", "Design Tools", "Accessibility", "Export Features"],
-        liveLink: "https://choose-a-feel.netlify.app/",
+        liveLink: "https://colourspal.netlify.app/",
         img: "https://i.postimg.cc/FKG0RqjQ/image.png", 
         landingImage: "https://i.postimg.cc/FKG0RqjQ/image.png",
         category: "personal",
