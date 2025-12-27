@@ -64,7 +64,7 @@
                   My Projects
                 </h3>
                 <p class="font-pixelify text-sm sm:text-base text-theme mb-4 leading-relaxed">
-                  Browse through my portfolio of client work and personal projects
+                  Browse through my portfolio of client work, personal projects, and tech assessments
                 </p>
                 <div class="inline-flex items-center text-accent-red font-pixelify font-semibold">
                   View Projects
@@ -78,7 +78,7 @@
             <!-- Contact Card -->
             <router-link 
               to="/contact"
-              class="group bg-theme rounded-2xl p-4 sm:p-6 border border-theme hover:border-accent-red transition-all duration-300 ease-out md:col-span-2 md:col-start-1 lg:col-span-1 lg:col-start-auto bg-theme-light flex justify-center items-center md:mx-auto"
+              class="group bg-theme rounded-2xl p-4 sm:p-6 border border-theme hover:border-accent-red transition-all duration-300 ease-out bg-theme-light"
             >
               <div class="text-center">
                  <div class="flex justify-center mb-4"><img src="https://i.postimg.cc/gcTX6gv4/3.png" alt="Contact" class="w-24 h-24  object-cover portfolio-icon"></div>

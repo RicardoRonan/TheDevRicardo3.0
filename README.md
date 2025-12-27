@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 TheDevRicardo 3.0
+# TheDevRicardo 3.0
 
 ### *Welcome to my portfolio.*
 
@@ -11,24 +11,24 @@ A modern, responsive portfolio showcasing my work as a creative developer. Built
 [![Vite](https://img.shields.io/badge/Vite-5.0.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-[🌐 **Live Demo**](https://thedevricardo3.netlify.app/) • [📧 **Contact**](mailto:ricardoronanm@gmail.com) • [💼 **LinkedIn**](https://www.linkedin.com/in/the-dev-ricardo/)
+[**Live Demo**](https://thedevricardo.netlify.app/) • [**Contact**](mailto:ricardoronanm@gmail.com) • [**LinkedIn**](https://www.linkedin.com/in/the-dev-ricardo/)
 
 </div>
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern Design**: Clean, minimalist aesthetic with custom animations
-- 📱 **Fully Responsive**: Mobile-first design that works on all devices
-- ⚡ **Lightning Fast**: Optimized with Vite for blazing-fast performance
-- 🎭 **Smooth Animations**: Fade-in effects, cloud animations, and interactive elements
-- 🎯 **Interactive Portfolio**: Project showcases with detailed modals
-- 🌙 **Theme Support**: Dynamic theming with CSS custom properties
-- ♿ **Accessible**: ARIA labels, semantic HTML, and keyboard navigation
-- 🚀 **Modern Stack**: Vue 3 Composition API with latest best practices
+- **Modern Design**: Clean, minimalist aesthetic with custom animations
+- **Fully Responsive**: Mobile-first design that works on all devices
+- **Lightning Fast**: Optimized with Vite for blazing-fast performance
+- **Smooth Animations**: Fade-in effects, cloud animations, and interactive elements
+- **Interactive Portfolio**: Project showcases with detailed modals
+- **Theme Support**: Dynamic theming with CSS custom properties
+- **Accessible**: ARIA labels, semantic HTML, and keyboard navigation
+- **Modern Stack**: Vue 3 Composition API with latest best practices
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -39,7 +39,7 @@ A modern, responsive portfolio showcasing my work as a creative developer. Built
 | **Deployment** | Netlify |
 | **Version Control** | Git, GitHub |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Node.js** 16+ 
@@ -81,7 +81,7 @@ npm run build
 npm run preview
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -96,7 +96,7 @@ src/
 │   ├── ProjectCard.vue        # Individual project cards
 │   ├── ProjectDetail.vue      # Project detail modal
 │   ├── ProjectListItem.vue    # Project list items
-│   ├── Projects.vue           # Projects showcase page
+│   ├── Projects.vue            # Projects showcase page
 │   ├── RetroLoadingBar.vue    # Retro-style loading component
 │   ├── SimpleRetroLoading.vue # Simple loading animation
 │   ├── Testimonials.vue       # Client testimonials
@@ -112,7 +112,7 @@ src/
 └── style.css                  # Global styles and Tailwind imports
 ```
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 ```css
@@ -133,36 +133,36 @@ src/
 - **Hover Effects**: Interactive element states
 - **Loading States**: Retro-style loading animations
 
-## 📱 Responsive Design
+## Responsive Design
 
 - **Mobile**: 320px - 767px
 - **Tablet**: 768px - 1023px  
 - **Desktop**: 1024px+
 - **Large Desktop**: 1366px+
 
-## 🎯 Portfolio Sections
+## Portfolio Sections
 
-### 🏠 Home
+### Home
 - Hero section with animated clouds
 - Navigation cards to different sections
 - Smooth scroll animations
 
-### 👨‍💻 About
+### About
 - Personal story and background
 - Professional photo gallery
 - Skills and expertise overview
 
-### 💼 Projects
+### Projects
 - **Client Work**: Spottless Cleaning, Clear Future SA, Damons Dynasty
 - **Personal Projects**: Statsmanne, ChooseAFeel, Vue.js Portfolio
 - Interactive project modals with detailed information
 
-### 📞 Contact
+### Contact
 - Contact form with validation
 - Social media links
 - Professional contact information
 
-## 🔧 Customization
+## Customization
 
 ### Adding New Projects
 Edit the `projects` array in `src/components/Projects.vue`:
@@ -192,7 +192,7 @@ colors: {
 }
 ```
 
-## 🌐 Browser Support
+## Browser Support
 
 | Browser | Version |
 |---------|---------|
@@ -201,7 +201,7 @@ colors: {
 | Safari | 14+ |
 | Edge | 88+ |
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -209,10 +209,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-**Built with ❤️ by [Ricardo Moses](https://github.com/RicardoRonan)**
+**Built with love by [Ricardo Moses](https://github.com/RicardoRonan)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RicardoRonan)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/the-dev-ricardo/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://thedevricardo3.netlify.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://thedevricardo.netlify.app/)
 
 </div>

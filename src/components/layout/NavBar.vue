@@ -198,7 +198,7 @@
             @click="closeMobileMenu"
             class="block text-theme hover:text-accent-red transition-all duration-300 ease-out font-pixelify py-3 px-2 relative rounded-lg hover:bg-theme-light transform"
             :class="{ 'text-accent-red bg-theme-light': $route.path === '/contact', 'translate-x-0 opacity-100': isMobileMenuOpen, 'translate-x-4 opacity-0': !isMobileMenuOpen }"
-            :style="{ 'transition-delay': '0.4s' }"
+            :style="{ 'transition-delay': '0.375s' }"
           >
             Contact
             <span v-if="$route.path === '/contact'" class="absolute left-0 top-0 bottom-0 w-1 bg-accent-red rounded-r"></span>
