@@ -6,6 +6,7 @@ import Tools from '../pages/Tools.vue'
 import Contact from '../pages/Contact.vue'
 import Testimonials from '../pages/Testimonials.vue'
 import Blog from '../pages/Blog.vue'
+import TechAssessments from '../pages/TechAssessments.vue'
 // import Services from '../pages/Services.vue'
 
 const routes = [
@@ -48,6 +49,11 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog
+  },
+  {
+    path: '/tech-assessments',
+    name: 'TechAssessments',
+    component: TechAssessments
   }
 ]
 
