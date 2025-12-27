@@ -10,35 +10,25 @@
         'opacity-0': !showContent 
       }"
     >
-      <!-- Header Section -->
-      <section class="pt-24 pt-16 md:pt-24">
+      <!-- Main Focus Section -->
+      <section class="pt-24 py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
-            <img src="https://i.postimg.cc/52xz48sW/resources.png" alt="Blog" class="w-24 h-24 object-cover portfolio-icon flex justify-center items-center mx-auto mb-4"></img>
+            <img src="https://i.postimg.cc/52xz48sW/resources.png" alt="Blog" class="w-24 h-24 mx-auto mb-4">
             <h1 class="font-pixelify font-bold text-4xl md:text-5xl text-theme mb-4">
-              Blog
+              My Blogs Live on
             </h1>
+            <h2 class="font-pixelify font-bold text-3xl md:text-4xl text-accent-red mb-4">
+              The Meta Stack
+            </h2>
             <p class="font-pixelify text-lg text-theme max-w-2xl mx-auto mb-8">
-              Thoughts, tutorials, and insights about web development and technology
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Blog Posts Section -->
-      <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <!-- Community Message -->
-          <div class="text-center py-12 md:py-16">
-            <h3 class="font-pixelify font-bold text-xl md:text-2xl text-theme mb-4">View My Blogs</h3>
-            <p class="font-pixelify text-theme/75 text-sm md:text-base max-w-2xl mx-auto mb-6">
-              You can view my blogs on a digital community made for developers where I share my thoughts, insights, and experiences about web development and technology.
+              A digital community for developers where I share my thoughts, insights, and experiences about web development and technology
             </p>
             <a 
               href="https://themetastack.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="inline-flex items-center px-6 py-3 bg-accent-red text-white font-pixelify font-semibold rounded-lg hover:bg-accent-red/80 transition-all duration-300 transform hover:scale-105"
+              class="inline-flex items-center px-6 py-3 bg-accent-red text-white font-pixelify font-semibold rounded-lg hover:bg-accent-red/90 transition-all duration-300"
             >
               Visit The Meta Stack
               <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
